@@ -1,0 +1,91 @@
+########################
+Downloading Web Content:
+
+Web Content is downloaded
+through a class, which extends
+"AsyncTask" .
+
+AsyncTask allows the 
+computer to run a task
+in the background.
+
+// AsyncTask<"data type
+to be sent", "data type
+to deal with during 
+process", "data type after
+process">
+
+//AsyncTask<String, void, String>
+
+We use .execute() , to run
+a download class.
+
+To get the final result
+of a download task, use
+".get()"
+
+Usually, we can use string as a holding variable for the result.
+
+The results are established in "doInBackgroung(){}" function.
+
+We also write the download code in "doInBackgroung(){}"
+function;
+
+A "URL" variable is used for a URL.
+
+An "HttpURLConnection" variable is used to established a connection between the app and the URL given in the "URL" type variable.
+
+The data for a URL is taken from the "doInBackgroung()" variable. Which is stored as a "VarArgs".
+
+Use ".openConnection()"
+to open an established connection between the app and the URL.
+
+Use a variable of type "InputStream" to get the incomming stream of data from the URL.
+
+Use .getInputStream() to catch the incomming stream of data from the URL.
+
+Use a variable of type "InputStreamReader" to read the captured stream of data.
+
+Use "InputStreamReader(Name of InputStream)" to indentify which stream of data to read from.
+
+To track the location of your InputStreamReader, use an int type variable and use it in the following fashion:
+"NameOfInputStream".read();
+
+To get the actual data, set that same int you used to track the InputStreamReader into a char variable, with in your code (here a while loop). You need to use "(char)" to cast it.
+
+To add data to your result, use "+=". In the following fashion:
+
+"NameOfResultVariable" += "NameOfcharVariable"
+
+Then use "return NameOfResultVariable" to get the final downloaded content.
+
+It is also useful to ask for internet premission in the "AndroidManifest.xml" file. The syntax is specific so look it up.
+########################
+
+########################
+Downloading Images:
+
+Same as before, using an "AsyncTask", but this time arround, we use "Bitmap" in the 3rd (result) variable of "AsyncTask".
+
+Other steps are almost identical.
+
+Now, insead of going through all of the characters one by one, we have to download the entire image in one go, becase we cant read it as a set of characters(well, we can but lets not do it).
+
+Use "nameOfHttpURLConnection.connect()" to connect your app to the established connection between it and the URL.
+
+Use ".getInputStream()", as before, to capture the data comming from our established connection.
+
+Use a variable of type "Bitmap" to store your image.
+
+Use ".decodeStream(nameOfInputStream)" to get the decoded image. This is becase when downloading, we downloaded an encoded version, now we must decode it so we can view it as an image.
+
+Use "return NameOfBitmapVariable" to get the final Image.
+
+Now call your image downloading class, and .execute(StringToExecute) to run it.
+
+Also use the above steps with a "Bitmap" variable, so that the result data can be stored properly, as it is an image.
+########################
+
+########################
+Advanced String Manipulation:
+
