@@ -40,13 +40,16 @@ The data for a URL is taken from the "doInBackgroung()" variable. Which is store
 Use ".openConnection()"
 to open an established connection between the app and the URL.
 
-Use a variable of type "InputStream" to get the incomming stream of data from the URL.
+Use a variable of type "InputStream" to get the incomming stream of data from the HttpURLConnection.
 
 Use .getInputStream() to catch the incomming stream of data from the URL.
 
 Use a variable of type "InputStreamReader" to read the captured stream of data.
 
 Use "InputStreamReader(Name of InputStream)" to indentify which stream of data to read from.
+
+// InputStreamReader inr = new InputStreamReader(in);
+//inr.read();
 
 To track the location of your InputStreamReader, use an int type variable and use it in the following fashion:
 "NameOfInputStream".read();
